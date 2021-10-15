@@ -1,11 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const router = require('./routes/NoteRoutes.js')
 
-const DB_URL = "mongodb+srv://sa:s3cr3t@cluster0.qa3t4.mongodb.net/gbc-fall2020?retryWrites=true&w=majority"
+
+const DB_URL = "mongodb+srv://gbc:s3cr3t@cluster0.dhvqi.mongodb.net/gbc-fall2021?retryWrites=true&w=majority"
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
+app.use("/app/", router);
 
 mongoose.Promise = global.Promise;
 
@@ -27,5 +31,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(8081, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port 8081");
 });
