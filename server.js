@@ -10,7 +10,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use("/app/", router);
+app.use("/", router);
 
 mongoose.Promise = global.Promise;
 
@@ -24,12 +24,6 @@ mongoose.connect(DB_URL, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-
-
-app.get('/', (req, res) => {
-    res.send("<h1>Welcome to Note taking application - Week06 Exercise</h1>");
-});
-
 
 app.listen(8081, () => {
     console.log("Server is listening on port 8081");
