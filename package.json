@@ -4,6 +4,7 @@
   "description": "Week06 Exercise as note taking application",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\""
   },
   "keywords": [
@@ -16,7 +17,7 @@
     "mongoose",
     "notes"
   ],
-  "author": "Pritesh Patel",
+  "author": "Jai Kumar",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",

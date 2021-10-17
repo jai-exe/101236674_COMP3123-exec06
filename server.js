@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const router = require('./routes/NoteRoutes.js')
+const router = require('./routes/NoteRoutes.js');
+mongoose.set('returnOriginal', false);
 
 
 const DB_URL = "mongodb+srv://gbc:s3cr3t@cluster0.dhvqi.mongodb.net/gbc-fall2021?retryWrites=true&w=majority"
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.use("/app/", router);
 
